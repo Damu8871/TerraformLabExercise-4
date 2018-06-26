@@ -14,7 +14,7 @@ resource "aws_elb" "wordpress_elb" {
     unhealthy_threshold = 2    
     timeout             = 5       
     interval            = 10 
-    target              = "HTTP:80/wordpress/index.php"    
+    target              = "TCP:80"    
   }
   instances = ["${var.instance-id}"]
 
